@@ -53,6 +53,37 @@ fn main() {
     a[2] = 7;
     println!("{}" , a[2]);
 
+    let mut camp:&str="OYK";
+    println!("{}", camp);
+    camp = "OYK CAMP";
+    println!("{}", camp);
+
+    let empty_string: String = String::new();
+    println!("{}", empty_string);
+
+    let mut content_string: String = String::from("OYK");
+    println!("{:?}", content_string);
+
+    let var_i = 234423;
+    println!("{:?}", var_i.to_string());
+    content_string = var_i.to_string();
+    println!("{:?}", content_string);
+    let char_var = 'B';
+    println!("{:?}", char_var);
+
+    let var2 = "ÖYK KIŞ KAMPI".replace("ÖYK", "GÜZEL");
+    println!("{:?}", var2);
+    // Why "{}" needs to be added ?
+
+    let mut var3 = var2.as_str();
+    println!("{}", var3);
+    var3 = "DENEME";
+    println!("{}", var2);
+    println!("{}", var3);
+    let mut var4 = var3;
+    println!("{}", var4);
+    var4 = "XXX";
+    println!("{} {}", var3, var4);
 
 }
 
