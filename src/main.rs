@@ -40,6 +40,19 @@ fn main() {
     let tuple2 = (300, 600.24, 'H');
     print_that_tuple(tuple2);
 
+    let a =[1, 2, 3, 4, 5];
+    println!("{}", a[0]);
+    // Shadowing, previous a array is no longer available.
+    let a: [i64; 6] = [11, 22, 33, 44, 55, 66];
+    println!("{}", a[0]);
+    let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    println!("{}", days[6]);
+
+    let mut a: [i32;5] = [3;5];
+    println!("{}" , a[2]);
+    a[2] = 7;
+    println!("{}" , a[2]);
+
 
 }
 
