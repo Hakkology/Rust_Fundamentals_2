@@ -2,11 +2,15 @@
 name = "init"
 version = "0.1.0"
 edition = "2021"
-default-run = "controlflow"
+default-run = "loop"
 
 [[bin]]
 name = "controlflow"
 path = "src/controlflow.rs"
+
+[[bin]]
+name = "loop"
+path = "src/loop.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
