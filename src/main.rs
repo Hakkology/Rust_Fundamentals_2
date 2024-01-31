@@ -1,3 +1,5 @@
+mod controlflow;
+
 fn main() {
     println!("Hello, world!");
 
@@ -71,7 +73,7 @@ fn main() {
     let char_var = 'B';
     println!("{:?}", char_var);
 
-    let var2 = "ÖYK KIŞ KAMPI".replace("ÖYK", "GÜZEL");
+    let mut var2 = "ÖYK KIŞ KAMPI".replace("ÖYK", "GÜZEL");
     println!("{:?}", var2);
     // Why "{}" needs to be added ?
 
@@ -84,6 +86,23 @@ fn main() {
     println!("{}", var4);
     var4 = "XXX";
     println!("{} {}", var3, var4);
+
+    var2.push(' ');
+    println!("{}", var2);
+    var2.push_str("ÖYK");
+
+    let var5 = var2.trim();
+    // println!("{}", var5.split(' '));
+
+    // check why.
+
+    println!("{:?}", var5.split(' '));
+
+    let var6 = format!("test");
+    println!("{}", var6);
+
+
+
 
 }
 
