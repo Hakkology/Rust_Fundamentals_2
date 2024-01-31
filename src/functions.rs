@@ -2,7 +2,7 @@ fn main(){
     print(&get_pi().to_string());
     helloo();
 
-    //ISA (infrastructure architecture) Dependent
+    //ISA (instruction set architecture) Dependent
     let mut param_no = 65;
     mutate_no_to_zero(param_no);
     println!("param_no is changed to {:?}.", param_no);

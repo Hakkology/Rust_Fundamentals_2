@@ -2,7 +2,7 @@
 name = "init"
 version = "0.1.0"
 edition = "2021"
-default-run = "functions"
+default-run = "struct"
 
 [[bin]]
 name = "controlflow"
@@ -20,6 +20,9 @@ path = "src/fibonacci.rs"
 name = "functions"
 path = "src/functions.rs"
 
+[[bin]]
+name = "struct"
+path = "src/struct.rs"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
