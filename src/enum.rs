@@ -74,6 +74,12 @@ fn main(){
     print_ders_detaylar(&ders1, &hoca1);
     print_ders_detaylar(&ders2, &hoca2);
 
+    // match ders1 {
+    //     Camp::Ders(name: String, count: i32) => {
+
+    //     }
+    // }
+
 }
 
 
