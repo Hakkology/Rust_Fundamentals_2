@@ -33,6 +33,12 @@ enum CarType{
     SUV
 }
 
+#[derive(Debug)]
+struct Person {
+    name: String,
+    gender: GenderCategory
+}
+
 fn main(){
 
     let male = GenderCategory::Male;
@@ -79,6 +85,21 @@ fn main(){
 
     //     }
     // }
+
+    let p1 = Person {
+        name: String::from("Hakan"),
+        gender: GenderCategory::Male
+    };
+
+    let p2 = Person {
+        name: String::from("Manolya"),
+        gender: GenderCategory::Male
+    };
+
+    println!("{:?}", p1);
+    println!("{:?}", p2);
+
+    println!("{}", p1.name);
 
 }
 
