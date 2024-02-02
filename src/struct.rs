@@ -52,19 +52,27 @@ fn main() {
             .expect("Invalid birthdate"),
     };
 
-    //let ogrenci_array: [&Ogrenci;3] = [&ogrenci, &ogrenci2, &ogrenci3];
-    let mut ogrenci_vec: Vec<Ogrenci> = vec![ogrenci, ogrenci2, ogrenci3];
+    let ogrenci_array: [&Ogrenci;3] = [&ogrenci, &ogrenci2, &ogrenci3];
+    let mut ogrenci_vec: Vec<&Ogrenci> = vec![&ogrenci, &ogrenci2, &ogrenci3];
 
-    let student_var = add_student(String::from("Veli"),String::from("Rust"), 23, NaiveDate::from_ymd_opt(2000, 11, 07).expect("Invalid birthdate"), &mut ogrenci_vec);
-    let student_var2 = add_student(String::from("Mustafa"),String::from("Rust"), 35, NaiveDate::from_ymd_opt(1988, 10, 07).expect("Invalid birthdate"), &mut ogrenci_vec);
-    let student_var3 = add_student(String::from("Melek"),String::from("Rust"), 28, NaiveDate::from_ymd_opt(1995, 4, 07).expect("Invalid birthdate"), &mut ogrenci_vec);
+    let student_var: Ogrenci = add_student(String::from("Veli"),String::from("Rust"), 23, NaiveDate::from_ymd_opt(2000, 11, 07).expect("Invalid birthdate"));
+    let student_var2:Ogrenci = add_student(String::from("Mustafa"),String::from("Rust"), 35, NaiveDate::from_ymd_opt(1988, 10, 07).expect("Invalid birthdate"));
+    let student_var3:Ogrenci = add_student(String::from("Melek"),String::from("Rust"), 28, NaiveDate::from_ymd_opt(1995, 4, 07).expect("Invalid birthdate"));
 
-    // print_student_details(ogrenci);
-    // print_student_details(ogrenci2);
-    // print_student_details(ogrenci3);
+    ogrenci_vec.push(&student_var);
+    ogrenci_vec.push(&student_var2);
+    ogrenci_vec.push(&student_var3);
 
-    // println!("{}", average_student_age(&ogrenci_array).to_string());
-    // print_student_details(&ogrenci_array);
+    for student in ogrenci_vec  {
+        print_student_details_from_vec(&student);
+    }
+
+    // for student in ogrenci_vec {
+    //     students_check(ogrenci_vec);
+    // }
+
+    println!("{}", average_student_age(&ogrenci_array).to_string());
+    print_student_details(&ogrenci_array);
 
 }
 
@@ -83,7 +91,7 @@ fn print_student_details(ogrenci: &[&Ogrenci;3]){
     }
 }
 
-fn print_student_details_from_vec(ogrenci: &mut &Ogrenci){
+fn print_student_details_from_vec(ogrenci: &Ogrenci){
 
     println!(
         "Adı: {}, Departmanı: {}, Yaşı: {}, Doğum Tarihi: {}-{}-{}",
@@ -110,7 +118,7 @@ fn average_student_age(ogrenci: &[&Ogrenci;3]) -> i32{
 
 }
 
-fn students_check(ogrenci_listesi: &mut Vec<&Ogrenci>){
+fn students_check(ogrenci_listesi: Vec<&Ogrenci>){
 
     for student in ogrenci_listesi {
         if student.age <35 && student.age >25 {
@@ -119,14 +127,11 @@ fn students_check(ogrenci_listesi: &mut Vec<&Ogrenci>){
     }
 }
 
-fn add_student(name: String, department: String, age: i32, birthyear: NaiveDate, ogrenci_listesi: &mut Vec<Ogrenci>){
-    
-    let student = Ogrenci {
-        name : name,
-        department: department,
-        age: age,
-        birthdate : birthyear,
-    };
-
-    ogrenci_listesi.push(student);
+fn add_student(name: String, department: String, age: i32, birthdate: NaiveDate) -> Ogrenci {
+    Ogrenci {
+        name,
+        department,
+        age,
+        birthdate,
+    }
 }

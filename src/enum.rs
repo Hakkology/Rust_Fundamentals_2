@@ -86,6 +86,12 @@ fn main(){
     //     }
     // }
 
+    //let arr = [hoca2];
+    let mut vec_arr =vec![hoca1];
+    println!("{}", vec_arr.capacity());
+    println!("{}", vec_arr.len());
+    vec_arr.push(hoca2);
+
     let p1 = Person {
         name: String::from("Hakan"),
         gender: GenderCategory::Male
