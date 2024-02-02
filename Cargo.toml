@@ -2,7 +2,7 @@
 name = "init"
 version = "0.1.0"
 edition = "2021"
-default-run = "ownership"
+default-run = "threads"
 
 [[bin]]
 name = "controlflow"
@@ -31,6 +31,14 @@ path = "src/enum.rs"
 [[bin]]
 name = "ownership"
 path = "src/ownership.rs"
+
+[[bin]]
+name = "traits"
+path = "src/traits.rs"
+
+[[bin]]
+name = "threads"
+path = "src/threads.rs"
 
 [[bin]]
 name = "concurrency"
