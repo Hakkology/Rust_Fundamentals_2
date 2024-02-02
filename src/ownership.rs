@@ -16,6 +16,7 @@ fn main(){
     do_something(&mut s);
     println!("{}", s);
     s.push_str("01");
+    println!("{}", s);
 
     // provide a new int and change the value accordingly.
     let int: u32 = 32;
@@ -33,8 +34,6 @@ fn main(){
     do_something_else3(int3); 
     println!("{}", int3); 
 
-
-
 }
 
 fn do_something(x: &mut String) {
@@ -42,16 +41,25 @@ fn do_something(x: &mut String) {
     x.push('1');
 }
 
+// return the changed value and assign it to new u32.
 fn do_something_else(x: u32) -> u32 {
     println!("{}", x);
     x + 10
 }
 
+// alter value through reference.
 fn do_something_else2(x: &mut u32) {
+    // dereferencing the value allows access to the value which was stored in memory.
+    // ampersand reaches to memory location, * reaches to the stored value.
     println!("{}", *x);
     *x += 10;
 }
 
+// only print the changed value accordingly.
 fn do_something_else3(x: u32) {
     println!("Value inside do_something_else: {}", x + 10); // Show the modified value inside the function
 }
+
+// fn lifetime('yasa x:String) -> 'yasa String {
+//     String::from("Lifetime");
+// }

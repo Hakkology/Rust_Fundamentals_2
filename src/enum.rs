@@ -4,6 +4,11 @@ enum GenderCategory{
     Female
 }
 
+enum LifetimeEnum<T, V>{
+    Yasam(V),
+    Olum(T),
+}
+
 enum AgeState{
     Available,
     Barelyavailable,
@@ -106,6 +111,9 @@ fn main(){
     println!("{:?}", p2);
 
     println!("{}", p1.name);
+
+    let ornek: LifetimeEnum <i32, String> = LifetimeEnum::Yasam(1987.to_string());
+    let ornek2: LifetimeEnum<f64, &str> = LifetimeEnum::Olum(1999.2);
 
 }
 
