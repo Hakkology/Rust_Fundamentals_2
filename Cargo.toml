@@ -43,6 +43,10 @@ path = "src/threads.rs"
 [[bin]]
 name = "concurrency"
 path = "src/concurrency.rs"
+
+[[bin]]
+name = "slices"
+path = "src/slices.rs"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
