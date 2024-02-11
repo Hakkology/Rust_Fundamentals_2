@@ -43,7 +43,7 @@ Using various functions with other statements for project flow.
 for, while and loop functionalities and relevant examples.
 
 ## Main
-Variables, tuples and arrays.
+Variables, tuples and arrays, most basic functionality.
 
 ## Ownership
 Ownership explanations, using references, possible solutions to repeated patterns in Rust, dereferencing.
