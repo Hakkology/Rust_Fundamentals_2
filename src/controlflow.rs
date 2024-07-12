@@ -54,9 +54,9 @@ fn main(){
 
     let country_code = "TR";
     let code = match country_code{
-        "TR" => println!("Turkiye"),
-        "US" => println!("Amerika"),
-        _ => println!("Bilinmeyen")
+        "TR" => "Turkiye",
+        "US" => "Amerika",
+        _ => "Bilinmeyen"
     };
     println!("State name is {:?}", code);
 
